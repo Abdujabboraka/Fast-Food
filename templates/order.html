@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+       /* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #ffb347; /* Bright orange top border for fast food feel */
+}
+
+h1 {
+    text-align: center;
+    color: #ff6f00; /* Fast-food-style orange */
+    font-weight: bold;
+    font-size: 40px; /* Reduced size for better fit on mobile */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #ff6f00;
+    box-shadow: 0 0 5px rgba(255, 111, 0, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff6f00;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+
+.btn-primary {
+    background-color: #ff6f00;
+}
+
+.btn-primary:hover {
+    background-color: #e65c00;
+}
+
+.fast-food-bg {
+    background-image: url('https://example.com/burger-background.jpg'); /* Replace with a fast food-themed image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.branding {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.branding img {
+    max-width: 120px; /* Logo size remains consistent */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 80px; /* Further reduced size for smaller screens */
+    }
+
+    .container {
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        font-size: 50px; /* Smaller font size for inputs on mobile */
+        padding: 15px; /* Reduced padding for inputs */
+    }
+
+    button {
+        font-size: 60px; /* Adjusted button size for better mobile usability */
+        padding: 20px; /* Reduced padding for buttons */
+    }
+}
+
+    </style>
+    <div class="fast-food-bg"></div>
+    <div class="container">
+        <div class="branding">
+            <img src="{% static 'images/fast-food.png' %}" alt="Fast Food Logo"> <!-- Replace with your logo -->
+        </div>
+        <h1>Place Your Order</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="customer_name">Name</label>
+                {{ form.customer_name }}
+            </div>
+
+            <div class="form-group">
+                <label for="customer_phone">Phone</label>
+                {{ form.customer_phone }}
+            </div>
+
+            <div class="form-group">
+                <label for="items">Select Menu Items</label>
+                {{ form.items }}
+            </div>
+
+            <button type="submit" class="btn-primary">{{status}}</button>
+        </form>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,112 @@
+<style>
+    .footer {
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    padding: 20px 10px; /* Reduced padding for smaller screens */
+    text-align: center; /* Center align text for mobile */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    margin-bottom: 10px; /* Space below the content */
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+    margin: 10px 0; /* Margin between sections */
+}
+
+.footer-info h3,
+.footer-links h3,
+.footer-social h3 {
+    font-size: 20px; /* Slightly smaller heading size for mobile */
+    margin-bottom: 5px;
+}
+
+.footer-info p {
+    margin-bottom: 5px; /* Spacing between paragraphs */
+}
+
+.footer-links ul,
+.footer-social ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.footer-links li,
+.footer-social li {
+    margin: 5px 0; /* Spacing between links */
+}
+
+.footer-links a,
+.footer-social a {
+    text-decoration: none;
+    color: #ffd54f; /* Yellow link color */
+    transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: #ffb347; /* Slightly darker yellow on hover */
+}
+
+.footer-bottom {
+    padding: 10px 0;
+    background-color: #222; /* Darker background for the bottom */
+}
+
+.footer-bottom p {
+    margin: 0; /* Remove margin for copyright */
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .footer-content {
+        flex-direction: row; /* Row layout for larger screens */
+        justify-content: space-around; /* Space out sections */
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-social {
+        flex: 1; /* Equal flex-basis for each section */
+        margin: 0 15px; /* Margin on sides for separation */
+    }
+}
+
+</style>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-info">
+            <h3>FastFood Express</h3>
+            <p>Bringing you the freshest, most delicious meals every day!</p>
+            <p>Location: 123 Tasty Lane, Flavor Town</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#" target="_blank">Facebook</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+                <li><a href="#" target="_blank">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 FastFood Express. All Rights Reserved.</p>
+    </div>
+</footer>
+

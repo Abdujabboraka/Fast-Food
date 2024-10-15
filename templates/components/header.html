@@ -1,0 +1,126 @@
+{% load static %}
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfdfd;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #ff6f00; /* Fast food orange */
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 200px;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            font-size: 80px;
+            color: white;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            background-color: #ff944d; /* Slightly lighter orange */
+            border-radius: 5px;
+        }
+
+        /* Order Button */
+        .order-btn {
+            background-color: #ffd54f; /* Yellow CTA button */
+            color: #333;
+            padding: 10px auto;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 60px;
+
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background-color: #ffc107; /* Darker yellow on hover */
+            color: #222;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+        }
+        .words {
+        animation: colorchange 1s infinite;
+        margin: 50px auto;
+        font-size: 50px;
+        color: #FF6F00; /* Fast food orange */
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'images/fast-food.png' %}" alt="Fast Food Logo"> <!-- Replace with actual logo -->
+            <h1>FastFood </h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+    <h1 class="words" align="center">Fresh Ingredients, Bold Flavors!</h1>
+
